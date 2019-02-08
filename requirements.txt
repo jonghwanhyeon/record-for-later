@@ -1,0 +1,4 @@
+pyyaml
+python-ffmpeg
+streamlink
+pyee
