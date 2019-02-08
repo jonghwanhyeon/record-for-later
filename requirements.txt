@@ -1,4 +1,5 @@
 pyyaml
 python-ffmpeg
 streamlink
+python-dateutil
 pyee

@@ -2,6 +2,7 @@ default:
   rotate_count: 10
   output_path: streams/
   quality: best
+  timezone: Asia/Seoul
 
 streams:
   ninja:

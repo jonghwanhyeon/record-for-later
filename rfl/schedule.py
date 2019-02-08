@@ -20,7 +20,9 @@ TimeRange.day = TimeRange(datetime.time(0, 0), datetime.time(23, 59))
 
 
 class Schedule:
-    def __init__(self, interval):
+    def __init__(self, interval, timezone):
+        self._timezone = timezone
+
         self.schedule = defaultdict(list)
         self._prepare_schedule(interval)
 
@@ -33,7 +35,7 @@ class Schedule:
 
     @property
     def interval(self):
-        now = datetime.datetime.now()
+        now = datetime.datetime.now(self._timezone)
         weekday = _weekdays[now.weekday()]
 
         for timerange, interval in self.schedule[weekday]:
