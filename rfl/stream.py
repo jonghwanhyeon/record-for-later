@@ -43,8 +43,9 @@ class StreamRecorder(EventEmitter):
         super().__init__()
         self.stream = stream
 
-    async def record(self, filename):
-        streamlink_process = await _streamlink(self.stream.url, self.stream.quality, stdout=True)
+    async def record(self, filename, options):
+        streamlink_process = await _streamlink(
+            self.stream.url, self.stream.quality, stdout=True, **options)
 
         # To fix inaccurate timestamps, record videos via ffmpeg
         ffmpeg = FFmpeg().input('pipe:0').output(os.fspath(filename), c='copy')

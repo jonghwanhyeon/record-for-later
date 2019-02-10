@@ -85,7 +85,9 @@ async def _create_task(name, options):
         try:
             if await stream.is_live():
                 _rotate_videos(path, options['rotate_count'])
-                await recorder.record(path / '{:%Y-%m-%d-%H-%M-%S}.mp4'.format(datetime.now(timezone)))
+                await recorder.record(
+                    path / '{:%Y-%m-%d-%H-%M-%S}.mp4'.format(datetime.now(timezone)),
+                    options.get('options', {}))
         except Exception as exception:
             logger.error(exception)
 
