@@ -5,7 +5,7 @@ default:
   timezone: Asia/Seoul
 
 streams:
-  ninja:
+  overwatchleague:
     url: https://www.twitch.tv/overwatchleague
     interval:
       mon:
@@ -24,7 +24,7 @@ streams:
         22:25-23:59: 60
       00:00-23:59: 600
 
-  jdm1197:
+  aflol:
     url: http://bj.afreecatv.com/aflol
     interval:
       wed:
